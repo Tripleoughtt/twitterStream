@@ -1,0 +1,29 @@
+<h1>Welcome to the Maps!</h1>
+
+
+
+<div>
+  <input id="address" type="text" name="">
+  <button id="submit">Show Address</button>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="messageBox col-xs-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td class="col-xs-3">Name</td>
+            <td class="col-xs-9">Tweet</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='tweet in tweets'>
+            <td>{{tweet.name}}</td>
+            <td>{{tweet.tweet}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="map" class="col-xs-6"></div>
+  </div>
+</div>

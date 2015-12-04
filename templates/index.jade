@@ -4,6 +4,7 @@ html
     meta(charset='UTF-8')
     title Social Login
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", media="all")
+    link(rel="stylesheet", href="style.css", media="all")
   body(ng-app='appFrame')
     div
     ui-view
@@ -13,5 +14,5 @@ html
     script(src='vendor/satellizer/satellizer.min.js')
     script(src='vendor/socket.io-client/socket.io.js')
     script(src="vendor/angular-socket-io/socket.min.js")
+    script(src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en")
     script(src="bundle.js")
-

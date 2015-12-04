@@ -18,11 +18,14 @@ gulp.task('watch', function(){
   gulp.watch('source/**/*', ['build']);
 });
 
-gulp.task('build', ['clean', 'bower'], function(){
+gulp.task('build', ['clean'], function(){
   return gulp.src(['source/*.js', 'source/**/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(addsrc('source/**/*.html'))
+    .pipe(addsrc('source/**/*.css'))
     .pipe(gulp.dest(paths.filepath))
+    .pipe(addsrc('vendor/**/*'))
+    .pipe(gulp.dest(paths.filepath + '/vendor'))
     .on('error', gutil.log)
     console.log('IM WATCHING YOU')
 });
@@ -34,6 +37,7 @@ gulp.task('clean', function(cb){
 gulp.task('bower', function(cb){
   run('bower i').exec(cb)
   .on('error', gutil.log);
+
 });
 
 
